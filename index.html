@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MoneyHer | Author</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Poppins, sans-serif;
+background:#0f0f13;
+color:white;
+line-height:1.6;
+}
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%;
+background:#111;
+position:sticky;
+top:0;
+z-index:10;
+}
+
+.logo{
+font-family:"Playfair Display";
+font-size:26px;
+letter-spacing:2px;
+}
+
+nav a{
+margin-left:25px;
+text-decoration:none;
+color:white;
+opacity:.8;
+}
+
+nav a:hover{
+opacity:1;
+}
+
+.hero{
+display:flex;
+flex-wrap:wrap;
+align-items:center;
+justify-content:center;
+padding:60px 8%;
+gap:60px;
+}
+
+.book-cover{
+width:280px;
+border-radius:12px;
+box-shadow:0 20px 50px rgba(0,0,0,.6);
+}
+
+.hero-text{
+max-width:520px;
+}
+
+.hero-text h1{
+font-family:"Playfair Display";
+font-size:42px;
+margin-bottom:15px;
+}
+
+.hero-text p{
+opacity:.85;
+margin-bottom:25px;
+}
+
+.price{
+font-size:24px;
+margin-bottom:20px;
+}
+
+.buttons{
+display:flex;
+flex-wrap:wrap;
+gap:15px;
+}
+
+.btn{
+padding:12px 22px;
+border:none;
+border-radius:8px;
+cursor:pointer;
+text-decoration:none;
+font-weight:500;
+}
+
+.buy{
+background:#ff6b6b;
+color:white;
+}
+
+.coffee{
+background:#ffd166;
+color:black;
+}
+
+.section{
+padding:80px 8%;
+text-align:center;
+}
+
+.section h2{
+font-family:"Playfair Display";
+font-size:32px;
+margin-bottom:30px;
+}
+
+.contact-form{
+max-width:500px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+input,textarea{
+padding:12px;
+border:none;
+border-radius:6px;
+}
+
+textarea{
+height:120px;
+resize:none;
+}
+
+.send{
+background:#4ecdc4;
+color:black;
+font-weight:500;
+}
+
+footer{
+text-align:center;
+padding:30px;
+opacity:.6;
+font-size:14px;
+}
+
+@media(max-width:800px){
+
+.hero{
+flex-direction:column;
+text-align:center;
+}
+
+.hero-text h1{
+font-size:34px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">MoneyHer</div>
+
+<nav>
+<a href="#">Home</a>
+<a href="#book">Book</a>
+<a href="#contact">Write</a>
+</nav>
+
+</header>
+
+
+<section class="hero" id="book">
+
+<img src="https://images.unsplash.com/photo-1512820790803-83ca734da794" class="book-cover">
+
+<div class="hero-text">
+
+<h1>The Day Death Missed</h1>
+
+<p>
+A dark thriller about fate, survival, and the strange moments when death forgets its duty.
+A family survives a catastrophic attack, but something far more mysterious begins following them.
+</p>
+
+<div class="price">$9.99</div>
+
+<div class="buttons">
+
+<a class="btn buy" href="#" target="_blank">
+Buy Book
+</a>
+
+<a class="btn buy" href="#" target="_blank">
+Amazon
+</a>
+
+<a class="btn coffee" href="https://buymeacoffee.com/" target="_blank">
+Support the Author
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="section">
+
+<h2>About the Author</h2>
+
+<p style="max-width:650px;margin:auto;opacity:.85;">
+MoneyHer writes dark thrillers, psychological fiction and intense survival stories.
+Stories where fate bends, death hesitates, and ordinary people face extraordinary danger.
+</p>
+
+</section>
+
+
+<section class="section" id="contact">
+
+<h2>Write to the Author</h2>
+
+<form class="contact-form" onsubmit="sendMail(event)">
+
+<input type="text" placeholder="Your Name" required>
+
+<input type="email" placeholder="Your Email" required>
+
+<textarea placeholder="Message..." required></textarea>
+
+<button class="btn send">Send Message</button>
+
+</form>
+
+</section>
+
+
+<footer>
+
+© 2026 MoneyHer — Author
+
+</footer>
+
+
+<script>
+
+function sendMail(e){
+
+e.preventDefault();
+
+let name=document.querySelectorAll("input")[0].value;
+let email=document.querySelectorAll("input")[1].value;
+let message=document.querySelector("textarea").value;
+
+let link="mailto:moneyher.official@gmail.com"
++"?subject=Message from "+name
++"&body=Email: "+email+"%0D%0A%0D%0A"+message;
+
+window.location.href=link;
+
+}
+
+</script>
+
+</body>
+</html>
